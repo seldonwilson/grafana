@@ -13,7 +13,7 @@ import (
 
 	"github.com/grafana/grafana/pkg/bus"
 	"github.com/grafana/grafana/pkg/log"
-	models "github.com/grafana/grafana/pkg/models"
+	"github.com/grafana/grafana/pkg/models"
 	"github.com/grafana/grafana/pkg/setting"
 )
 
@@ -214,7 +214,7 @@ func (auth *Auth) DisableExternalUser(username string) error {
 	}
 
 	userInfo := userQuery.Result
-	if userInfo.AuthModule == "ldap" && !userInfo.IsDisabled {
+	if userInfo.AuthModule == models.AuthModuleLDAP && !userInfo.IsDisabled {
 		auth.log.Debug("Disabling user", "user", userQuery.Result.Login)
 		// disable user in grafana
 		disableUserCmd := &models.DisableUserCommand{
@@ -234,7 +234,7 @@ func (auth *Auth) GetGrafanaUserFor(
 	user *UserInfo,
 ) (*models.User, error) {
 	extUser := &models.ExternalUserInfo{
-		AuthModule: "ldap",
+		AuthModule: models.AuthModuleLDAP,
 		AuthId:     user.DN,
 		Name:       fmt.Sprintf("%s %s", user.FirstName, user.LastName),
 		Login:      user.Username,
