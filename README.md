@@ -2,12 +2,11 @@
 
 [Website](https://grafana.com) |
 [Twitter](https://twitter.com/grafana) |
-[Community & Forum](https://community.grafana.com)
+[Community & Forum](https://community.grafana.com) |
+[What is Grafana](https://www.logicify.com/en/blog/grafana-as-a-yet-another-tool-for-technical-monitoring-of-software-products-we-build/)
 
 Grafana is an open source, feature rich metrics dashboard and graph editor for
 Graphite, Elasticsearch, OpenTSDB, Prometheus and InfluxDB.
-
-[See what Grafana can be used for](https://www.logicify.com/en/blog/grafana-as-a-yet-another-tool-for-technical-monitoring-of-software-products-we-build/)
 
 <!---
 ![](http://docs.grafana.org/assets/img/features/dashboard_ex1.png)
